@@ -1,7 +1,7 @@
 FROM python:3.6
-LABEL maintainer 'Teste Aluno'
+LABEL maintainer 'Renato'
 
-RUN useradd www && \
+RUN useradd www && \Teste Aluno
     mkdir /app && \
     mkdir /log && \
     chown www /log
