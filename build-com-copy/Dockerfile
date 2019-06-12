@@ -1,5 +1,5 @@
 FROM nginx:latest
-LABEL maintainer 'Alubo Cod3r <aluno at cod3r.com.br>'
+LABEL maintainer 'Renato Welinton Schlogel'
 
 RUN echo '<h1>Sem conteudo</h1>' > /usr/share/nginx/html/conteudo.html
 COPY *.html /usr/share/nginx/html/

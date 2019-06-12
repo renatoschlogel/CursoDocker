@@ -1,0 +1,4 @@
+FROM debian
+MAINTAINER Renato W Schlogel
+ARG S3_BUCKET=files
+ENV S3_BUCKET={$S3_BUCKET}
