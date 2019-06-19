@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <title>Cadastro Simples</title>
-        <link rel='stylesheet' href='https://www.udemy.com/curso-docker'>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     </head>
     <body>
         <div class="container">
@@ -31,7 +31,34 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
         <script>
-        
+            const API = 'http://localhost:3000';
+
+            const getClients = () =>{
+                $.ajax({
+                    url: `${API}/clients`,
+                    success: clients =>{
+                        console.log('clientes:', clients);
+                    }
+
+                });
+            }
+
+            const saveClient = () =>{
+                const _id = $('[name=id]').val();
+                const name = $('[name=name]').val();
+                $.ajax({
+                    method: _id ? 'PUT' : 'POST',
+                    url: `${API}/clients/${_id}`,
+                    data: _id ? {_id, name} : {name},
+                    success: getClients
+                });
+
+            }
+
+            $(() =>{
+                getClients();
+                $('[save]').click(saveClient);
+            })
         </script>
     </body>
 </html>
