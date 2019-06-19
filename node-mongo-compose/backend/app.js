@@ -12,6 +12,7 @@ mongoose.connect('mongodb://db/mydb');
 // Middlewares
 server.use(boryParser.urlencoded({extended:true}));
 server.use(boryParser.json());
+server.use(cors());
 
 // ODM
 const Client = restful.model('Client', {
